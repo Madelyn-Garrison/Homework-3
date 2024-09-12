@@ -57,12 +57,12 @@ The function below takes in a list identical in structure to bp_list and an R fu
 ```{r}
 summ_function<-function(x, stat='mean'){
       my_func<-get(stat)
-      a<-my_func(bp_list$treatment$pre_bp)
-      b<-my_func(bp_list$treatment$post_bp)
-      c<-my_func(bp_list$treatment$diff_bp)
-      d<-my_func(bp_list$placebo$pre_bp)
-      e<-my_func(bp_list$placebo$post_bp)
-      f<-my_func(bp_list$placebo$diff_bp)
+      a<-my_func(x$treatment$pre_bp)
+      b<-my_func(x$treatment$post_bp)
+      c<-my_func(x$treatment$diff_bp)
+      d<-my_func(x$placebo$pre_bp)
+      e<-my_func(x$placebo$post_bp)
+      f<-my_func(x$placebo$diff_bp)
       values<-c(a,b,c,d,e,f)
       names(values)<-c(paste("treatment_pre_bp",stat,sep='_'),
                        paste("treatment_post_bp",stat,sep='_'),
